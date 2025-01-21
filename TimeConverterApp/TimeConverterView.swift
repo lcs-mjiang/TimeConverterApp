@@ -20,9 +20,23 @@ struct TimeConverterView: View {
                     .keyboardType(.decimalPad)
             }
             Button {
+                func convertTime() {
+                minutes = nil
+                seconds = nil
+                feedback = ""
+               
+                if let hours = Double(hoursInput), hours >= 0 {
+                    minutes = Int(hours * 60)
+                    seconds = Int(hours * 3600)
+                } else {
+                    feedback = "Please enter a valid non-negative number for hours."
+                }
+            }
+
             } label: {
                 Text("Convert")
             }
+            
             .buttonStyle(.borderedProminent)
 
             .navigationTitle("Time Converter")
