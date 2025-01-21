@@ -14,7 +14,9 @@ struct TimeConverterView: View {
     @State private var feedback: String = ""
     var body: some View {
         NavigationStack {
-            VStack {
+            VStack {TextField("Enter hours", text: $hoursInput)
+                    .textFieldStyle(.roundedBorder)
+                    .keyboardType(.decimalPad)
             }
             .navigationTitle("Time Converter")
         }
