@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct TimeConverterView: View {
+    @State private var hoursInput: String = ""
+    @State private var minutes: Int? = nil
+    @State private var seconds: Int? = nil
+    @State private var feedback: String = ""
     var body: some View {
         NavigationStack {
             VStack {
-                // Content will go here
             }
             .navigationTitle("Time Converter")
         }
